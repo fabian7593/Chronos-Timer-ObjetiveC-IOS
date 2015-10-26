@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4er-kz-qjA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Principal View Controller-->
+        <scene sceneID="947-Et-ogH">
+            <objects>
+                <viewController id="4er-kz-qjA" customClass="principalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tdF-5W-OWO"/>
+                        <viewControllerLayoutGuide type="bottom" id="yil-Sx-dGb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uEQ-Mm-0XG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CHRONOS:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ng-XI-kdi">
+                                <rect key="frame" x="8" y="28" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmo-Uk-UeB">
+                                <rect key="frame" x="243" y="28" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqP-qH-62j">
+                                <rect key="frame" x="8" y="57" width="47" height="30"/>
+                                <state key="normal" title="START">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButtonStartCronometerClick:" destination="4er-kz-qjA" eventType="touchUpInside" id="r4e-Xr-Zu6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-pz-FV9">
+                                <rect key="frame" x="136" y="57" width="49" height="30"/>
+                                <state key="normal" title="PAUSE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButtonPauseCronometerClick:" destination="4er-kz-qjA" eventType="touchUpInside" id="ubF-ea-vJD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTM-Vn-Vac">
+                                <rect key="frame" x="263" y="57" width="41" height="30"/>
+                                <state key="normal" title="STOP">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButtonStopCronometerClick:" destination="4er-kz-qjA" eventType="touchUpInside" id="BLl-MM-equ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upX-tp-mgd">
+                                <rect key="frame" x="168" y="28" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qid-oA-4oy">
+                                <rect key="frame" x="206" y="28" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gGG-Vu-f9q">
+                                <rect key="frame" x="0.0" y="95" width="320" height="473"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="52" id="zLg-x7-Ez8" customClass="OthersTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zLg-x7-Ez8" id="Ore-Sy-ZD3">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAUSE CHRONOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ua-L6-K5Q">
+                                                    <rect key="frame" x="16" y="15" width="146" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMe-m9-zeh">
+                                                    <rect key="frame" x="185" y="15" width="122" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelSaveCronometer" destination="HMe-m9-zeh" id="gej-mP-8oN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4er-kz-qjA" id="LWe-xD-hxA"/>
+                                    <outlet property="delegate" destination="4er-kz-qjA" id="Rcg-HJ-whL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gGG-Vu-f9q" firstAttribute="leading" secondItem="uEQ-Mm-0XG" secondAttribute="leadingMargin" constant="-16" id="0es-pj-HOh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="upX-tp-mgd" secondAttribute="trailing" constant="116" id="Ial-CL-U22"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gGG-Vu-f9q" secondAttribute="trailing" constant="-16" id="KNq-3h-oGu"/>
+                            <constraint firstItem="2Ng-XI-kdi" firstAttribute="top" secondItem="tdF-5W-OWO" secondAttribute="bottom" constant="8" id="Lhp-sW-bAP"/>
+                            <constraint firstItem="yil-Sx-dGb" firstAttribute="top" secondItem="gGG-Vu-f9q" secondAttribute="bottom" id="NHa-3W-E0w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h7N-pz-FV9" secondAttribute="trailing" constant="119" id="RkM-wR-8cA"/>
+                            <constraint firstItem="upX-tp-mgd" firstAttribute="top" secondItem="tdF-5W-OWO" secondAttribute="bottom" constant="8" id="Rst-qE-1zL"/>
+                            <constraint firstItem="HTM-Vn-Vac" firstAttribute="trailing" secondItem="uEQ-Mm-0XG" secondAttribute="trailingMargin" id="eWg-1X-XGh"/>
+                            <constraint firstItem="PqP-qH-62j" firstAttribute="top" secondItem="tdF-5W-OWO" secondAttribute="bottom" constant="37" id="eg1-Ba-7bv"/>
+                            <constraint firstItem="Nmo-Uk-UeB" firstAttribute="top" secondItem="tdF-5W-OWO" secondAttribute="bottom" constant="8" id="fHX-CD-ovB"/>
+                            <constraint firstItem="h7N-pz-FV9" firstAttribute="top" secondItem="tdF-5W-OWO" secondAttribute="bottom" constant="37" id="hfD-3Y-rQx"/>
+                            <constraint firstItem="2Ng-XI-kdi" firstAttribute="leading" secondItem="uEQ-Mm-0XG" secondAttribute="leadingMargin" constant="-8" id="mEt-y2-eBj"/>
+                            <constraint firstItem="Qid-oA-4oy" firstAttribute="top" secondItem="tdF-5W-OWO" secondAttribute="bottom" constant="8" id="myF-ii-q1F"/>
+                            <constraint firstItem="h7N-pz-FV9" firstAttribute="leading" secondItem="uEQ-Mm-0XG" secondAttribute="leadingMargin" constant="120" id="odY-Se-nPe"/>
+                            <constraint firstItem="HTM-Vn-Vac" firstAttribute="top" secondItem="tdF-5W-OWO" secondAttribute="bottom" constant="37" id="pdf-kS-DLi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nmo-Uk-UeB" secondAttribute="trailing" constant="26" id="qAh-WY-nnt"/>
+                            <constraint firstItem="gGG-Vu-f9q" firstAttribute="top" secondItem="HTM-Vn-Vac" secondAttribute="bottom" constant="8" id="vep-Y5-5bH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qid-oA-4oy" secondAttribute="trailing" constant="78" id="vyR-c8-IAE"/>
+                            <constraint firstItem="PqP-qH-62j" firstAttribute="leading" secondItem="uEQ-Mm-0XG" secondAttribute="leadingMargin" constant="-8" id="xDU-bZ-LU1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelCronosMiliSeconds" destination="Nmo-Uk-UeB" id="QQi-Y3-PaG"/>
+                        <outlet property="labelCronosMinutes" destination="upX-tp-mgd" id="Wa0-DK-aLZ"/>
+                        <outlet property="labelCronosSeconds" destination="Qid-oA-4oy" id="PCE-5f-Eqe"/>
+                        <outlet property="tableViewer" destination="gGG-Vu-f9q" id="l8K-H8-0MX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpv-gd-Fj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="289"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
