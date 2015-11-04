@@ -8,15 +8,26 @@
 
 #import "principalViewController.h"
 #import "OthersTableViewCell.h"
+#import "PrincipalClass.h"
+#import "AppDelegate.h"
+#import "TimePower.h"
+#import "ChildTimePower.h"
 
 @interface principalViewController ()
 {
     //declare variables
+    PrincipalClass *principalClass;
+    AppDelegate *appDelegateIntance;
+    ChildTimePower *childTimePower;
+    
+    
     NSTimer *timer;
     int plusMiliSecond;
     int plusSeconds;
     int plusMinutes;
     NSMutableArray *arrayToShowThePowerOfChronos;
+    
+    NSMutableArray *arrayTables;
 }
 @end
 
@@ -25,12 +36,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initAllToDestroyTime];
+    [self setInitialVariables];
+    
+    
+    arrayToShowThePowerOfChronos = (NSMutableArray *)[[childTimePower timePowerFetchRequestDescending:appDelegateIntance.managedObjectContext]copy];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)setInitialVariables
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegateIntance= appDelegate;
+    
+    //initialized variables
+    principalClass = [[PrincipalClass alloc] init];
+    childTimePower = [[ChildTimePower alloc]init];
+}
+
+
+-(void)setVariablesToinsert:(NSString *)fireHour
+{
+    TimePower *timePower;
+    timePower=[childTimePower timePowerEntityInsert:appDelegateIntance.managedObjectContext];
+    [childTimePower timePowerSet:timePower Date:[NSDate date]];
+    [childTimePower timePowerSet:timePower Hour:fireHour];
+    [appDelegateIntance saveContext];
+}
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -48,7 +85,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     OthersTableViewCell *otherCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    otherCell.labelSaveCronometer.text = [arrayToShowThePowerOfChronos objectAtIndex:indexPath.row];;
+    
+    
+    @try {
+        otherCell.labelSaveCronometer.text =[arrayToShowThePowerOfChronos objectAtIndex:indexPath.row];
+    }
+    @catch (NSException * e) {
+        TimePower *tpower = [arrayToShowThePowerOfChronos objectAtIndex:indexPath.row];
+        otherCell.labelSaveCronometer.text = tpower.hour;
+    }
+    
+    
     return otherCell;
 }
 
@@ -61,6 +108,8 @@
     NSString *finalChronosPause=[NSString stringWithFormat:@" %@ : %@  : %@",[NSString stringWithFormat:@"%i",plusMinutes],[NSString stringWithFormat:@"%i",plusSeconds] ,[NSString stringWithFormat:@"%i",plusMiliSecond]];
     
     [arrayToShowThePowerOfChronos addObject:finalChronosPause];
+    [self setVariablesToinsert:finalChronosPause];
+    
     [self.tableViewer reloadData];
 }
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E7A16D21BEAB22E00C1ABEC /* ChronosModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E7A16D01BEAB22E00C1ABEC /* ChronosModel.xcdatamodeld */; };
+		9E7A16D81BEAB40000C1ABEC /* TimePower.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7A16D61BEAB40000C1ABEC /* TimePower.m */; };
+		9E7A16DE1BEAB4BC00C1ABEC /* PrincipalClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7A16DD1BEAB4BC00C1ABEC /* PrincipalClass.m */; };
+		9E7A16E21BEAC04C00C1ABEC /* ChildTimePower.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7A16E11BEAC04C00C1ABEC /* ChildTimePower.m */; };
 		9ECC81B41BDD6C4D008FDB17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC81B31BDD6C4D008FDB17 /* main.m */; };
 		9ECC81B71BDD6C4D008FDB17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC81B61BDD6C4D008FDB17 /* AppDelegate.m */; };
 		9ECC81BD1BDD6C4D008FDB17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC81BB1BDD6C4D008FDB17 /* Main.storyboard */; };
@@ -28,6 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E7A16D11BEAB22E00C1ABEC /* ChronosModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChronosModel.xcdatamodel; sourceTree = "<group>"; };
+		9E7A16D51BEAB40000C1ABEC /* TimePower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimePower.h; path = ../TimePower.h; sourceTree = "<group>"; };
+		9E7A16D61BEAB40000C1ABEC /* TimePower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimePower.m; path = ../TimePower.m; sourceTree = "<group>"; };
+		9E7A16DC1BEAB4BC00C1ABEC /* PrincipalClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalClass.h; sourceTree = "<group>"; };
+		9E7A16DD1BEAB4BC00C1ABEC /* PrincipalClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrincipalClass.m; sourceTree = "<group>"; };
+		9E7A16E01BEAC04C00C1ABEC /* ChildTimePower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildTimePower.h; sourceTree = "<group>"; };
+		9E7A16E11BEAC04C00C1ABEC /* ChildTimePower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildTimePower.m; sourceTree = "<group>"; };
 		9ECC81AE1BDD6C4D008FDB17 /* Cronometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cronometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ECC81B21BDD6C4D008FDB17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ECC81B31BDD6C4D008FDB17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +74,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E7A16D91BEAB41000C1ABEC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9E7A16DB1BEAB43800C1ABEC /* Controller */,
+				9E7A16DA1BEAB42400C1ABEC /* entity */,
+				9E7A16D01BEAB22E00C1ABEC /* ChronosModel.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		9E7A16DA1BEAB42400C1ABEC /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				9E7A16D51BEAB40000C1ABEC /* TimePower.h */,
+				9E7A16D61BEAB40000C1ABEC /* TimePower.m */,
+			);
+			name = entity;
+			sourceTree = "<group>";
+		};
+		9E7A16DB1BEAB43800C1ABEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9E7A16E01BEAC04C00C1ABEC /* ChildTimePower.h */,
+				9E7A16E11BEAC04C00C1ABEC /* ChildTimePower.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9E7A16DF1BEAB4C300C1ABEC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9E7A16DC1BEAB4BC00C1ABEC /* PrincipalClass.h */,
+				9E7A16DD1BEAB4BC00C1ABEC /* PrincipalClass.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		9ECC81A51BDD6C4D008FDB17 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +132,8 @@
 		9ECC81B01BDD6C4D008FDB17 /* Cronometer */ = {
 			isa = PBXGroup;
 			children = (
+				9E7A16DF1BEAB4C300C1ABEC /* Classes */,
+				9E7A16D91BEAB41000C1ABEC /* CoreData */,
 				9ECC81E01BDD98A2008FDB17 /* principalViewController.h */,
 				9ECC81E11BDD98A2008FDB17 /* principalViewController.m */,
 				9ECC81DD1BDD6F10008FDB17 /* OthersTableViewCell.h */,
@@ -226,8 +276,12 @@
 			files = (
 				9ECC81B71BDD6C4D008FDB17 /* AppDelegate.m in Sources */,
 				9ECC81DF1BDD6F10008FDB17 /* OthersTableViewCell.m in Sources */,
+				9E7A16DE1BEAB4BC00C1ABEC /* PrincipalClass.m in Sources */,
+				9E7A16E21BEAC04C00C1ABEC /* ChildTimePower.m in Sources */,
+				9E7A16D21BEAB22E00C1ABEC /* ChronosModel.xcdatamodeld in Sources */,
 				9ECC81E21BDD98A2008FDB17 /* principalViewController.m in Sources */,
 				9ECC81B41BDD6C4D008FDB17 /* main.m in Sources */,
+				9E7A16D81BEAB40000C1ABEC /* TimePower.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +476,7 @@
 				9ECC81D31BDD6C4D008FDB17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9ECC81D41BDD6C4D008FDB17 /* Build configuration list for PBXNativeTarget "CronometerTests" */ = {
 			isa = XCConfigurationList;
@@ -430,8 +485,23 @@
 				9ECC81D61BDD6C4D008FDB17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9E7A16D01BEAB22E00C1ABEC /* ChronosModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9E7A16D11BEAB22E00C1ABEC /* ChronosModel.xcdatamodel */,
+			);
+			currentVersion = 9E7A16D11BEAB22E00C1ABEC /* ChronosModel.xcdatamodel */;
+			name = ChronosModel.xcdatamodeld;
+			path = ../ChronosModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9ECC81A61BDD6C4D008FDB17 /* Project object */;
 }
