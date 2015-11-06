@@ -22,6 +22,7 @@
 - (id)timePowerEntityInsert:(NSManagedObjectContext *)context;
 - (NSArray *)timePowerFetchRequestDescending:(NSManagedObjectContext *)context;
 - (NSArray *)timePowerFetchRequest:(NSManagedObjectContext *)context;
+- (void) destroyerTimePowerData:(NSManagedObjectContext *)context;
 
 // Set Variables
 - (void)timePowerSet:(TimePower *)timePower Date:(NSDate *)date;

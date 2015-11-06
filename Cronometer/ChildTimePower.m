@@ -23,6 +23,10 @@
     return [PrincipalClass fetchingCoreDataContext:context entity:timerPowerString];
 }
 
+-(void)destroyerTimePowerData:(NSManagedObjectContext *)context{
+    [PrincipalClass deleteAllDataInContext:context byEntity:timerPowerString];
+}
+
 // Set Variables
 - (void)timePowerSet:(TimePower *)timePower Date:(NSDate *)date{
     [timePower setValue:date forKey:dateString];

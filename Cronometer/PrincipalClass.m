@@ -55,7 +55,7 @@
 
 
 //this method delete all data of entity and context
--(void)deleteAllDataInContext: (NSManagedObjectContext *) localContext byEntity:(NSString *) entityName{
++(void)deleteAllDataInContext: (NSManagedObjectContext *) localContext byEntity:(NSString *) entityName{
     
     NSFetchRequest *allData = [[NSFetchRequest alloc] init];
     [allData setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:localContext]];

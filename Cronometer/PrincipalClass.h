@@ -16,6 +16,6 @@
 + (NSArray *)fetchingCoreDataContext:(NSManagedObjectContext *)context entity:(NSString *)entity predicate :(NSString *)predicate param:(NSString *)param variable:(NSString *)variable ascending:(BOOL)ascending;
 + (NSArray *)fetchingCoreDataContext:(NSManagedObjectContext *)context entity:(NSString *)entity variable:(NSString *)variable ascending:(BOOL)ascending;
 + (NSArray *)fetchingCoreDataContext:(NSManagedObjectContext *)context entity:(NSString *)entity;
-- (void)deleteAllDataInContext: (NSManagedObjectContext *) localContext byEntity:(NSString *) entityName;
++(void)deleteAllDataInContext: (NSManagedObjectContext *) localContext byEntity:(NSString *) entityName;
 
 @end

@@ -19,14 +19,13 @@
     PrincipalClass *principalClass;
     AppDelegate *appDelegateIntance;
     ChildTimePower *childTimePower;
-    
-    
+
+    float internalTimer;
     NSTimer *timer;
     int plusMiliSecond;
     int plusSeconds;
     int plusMinutes;
     NSMutableArray *arrayToShowThePowerOfChronos;
-    
     NSMutableArray *arrayTables;
 }
 @end
@@ -37,9 +36,9 @@
     [super viewDidLoad];
     [self initAllToDestroyTime];
     [self setInitialVariables];
+    [self setFetchArrayChronos];
     
     
-    arrayToShowThePowerOfChronos = (NSMutableArray *)[[childTimePower timePowerFetchRequestDescending:appDelegateIntance.managedObjectContext]copy];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,18 +46,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+//realized fetch of chronos data
+-(void)setFetchArrayChronos{
+    arrayToShowThePowerOfChronos = (NSMutableArray *)[[childTimePower timePowerFetchRequest:appDelegateIntance.managedObjectContext]copy];
+}
 
+// set the principal variables
 - (void)setInitialVariables
 {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegateIntance= appDelegate;
-    
     //initialized variables
     principalClass = [[PrincipalClass alloc] init];
     childTimePower = [[ChildTimePower alloc]init];
+    internalTimer=0.0004;
 }
 
-
+// initialized the variables to insert
 -(void)setVariablesToinsert:(NSString *)fireHour
 {
     TimePower *timePower;
@@ -85,16 +89,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     OthersTableViewCell *otherCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    
-    @try {
-        otherCell.labelSaveCronometer.text =[arrayToShowThePowerOfChronos objectAtIndex:indexPath.row];
-    }
-    @catch (NSException * e) {
-        TimePower *tpower = [arrayToShowThePowerOfChronos objectAtIndex:indexPath.row];
-        otherCell.labelSaveCronometer.text = tpower.hour;
-    }
-    
+    TimePower *tpower = [arrayToShowThePowerOfChronos objectAtIndex:indexPath.row];
+    otherCell.labelSaveCronometer.text = tpower.hour;
     
     return otherCell;
 }
@@ -107,15 +103,15 @@
     
     NSString *finalChronosPause=[NSString stringWithFormat:@" %@ : %@  : %@",[NSString stringWithFormat:@"%i",plusMinutes],[NSString stringWithFormat:@"%i",plusSeconds] ,[NSString stringWithFormat:@"%i",plusMiliSecond]];
     
-    [arrayToShowThePowerOfChronos addObject:finalChronosPause];
     [self setVariablesToinsert:finalChronosPause];
+    [self setFetchArrayChronos];
     
     [self.tableViewer reloadData];
 }
 
 //Start chronos timer
 - (IBAction)UIButtonStartCronometerClick:(id)sender{
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(initialTimer) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:internalTimer target:self selector:@selector(initialTimer) userInfo:nil repeats:YES];
 }
 
 //stop and init all of chronos timer
@@ -133,6 +129,7 @@
     plusSeconds=0;
     plusMinutes=0;
     arrayToShowThePowerOfChronos = [[NSMutableArray alloc]init];
+    [childTimePower destroyerTimePowerData:appDelegateIntance.managedObjectContext];
 }
 
 //the method to run timer
